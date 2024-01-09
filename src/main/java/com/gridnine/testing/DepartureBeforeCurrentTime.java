@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Исключение вылетов до текущего момента времени
+ *  Исключение перелётов до текущего момента времени
  */
 public class DepartureBeforeCurrentTime implements Filter {
     @Override
