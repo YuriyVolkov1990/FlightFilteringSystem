@@ -10,6 +10,6 @@ public class Main {
 
         Filter first = new DepartureBeforeCurrentTime();
 
-        System.out.println("Без вылета до текущего момента времени:" + first.filter(flights));
+        System.out.println("Исключение вылетов до текущего момента времени:" + first.filter(flights));
     }
 }

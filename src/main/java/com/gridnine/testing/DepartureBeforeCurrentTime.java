@@ -1,13 +1,11 @@
 package com.gridnine.testing;
 
-import java.time.Clock;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Вылет до текущего момента времени
+ * Исключение вылетов до текущего момента времени
  */
 public class DepartureBeforeCurrentTime implements Filter {
     @Override
