@@ -11,10 +11,14 @@ public class ArrivalDateEarlierDepartureDate implements Filter {
     @Override
     public List<Flight> filter(List<Flight> flights) {
         List<Flight> filteredFlights = new ArrayList<>();
+        work:
         for (Flight flight : flights) {
-            if (flight.getSegments().get(0).getDepartureDate().isBefore(flight.getSegments().get(0).getArrivalDate())) {
-                filteredFlights.add(flight);
+            for (int j = 0; j < flight.getSegments().size(); j++) {
+                if (flight.getSegments().get(j).getDepartureDate().isAfter(flight.getSegments().get(j).getArrivalDate())) {
+                    continue work;
+                }
             }
+            filteredFlights.add(flight);
         }
         return filteredFlights;
     }
