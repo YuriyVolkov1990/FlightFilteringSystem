@@ -13,8 +13,8 @@ public class ArrivalDateEarlierDepartureDate implements Filter {
         List<Flight> filteredFlights = new ArrayList<>();
         work:
         for (Flight flight : flights) {
-            for (int j = 0; j < flight.getSegments().size(); j++) {
-                if (flight.getSegments().get(j).getDepartureDate().isAfter(flight.getSegments().get(j).getArrivalDate())) {
+            for (int i = 0; i < flight.getSegments().size(); i++) {
+                if (flight.getSegments().get(i).getDepartureDate().isAfter(flight.getSegments().get(i).getArrivalDate())) {
                     continue work;
                 }
             }
