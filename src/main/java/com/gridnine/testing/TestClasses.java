@@ -15,7 +15,6 @@ class FlightBuilder {
     static List<Flight> createFlights() {
         LocalDateTime threeDaysFromNow = LocalDateTime.now().plusDays(3);
         return Arrays.asList(
-                createFlight(threeDaysFromNow, threeDaysFromNow.plusHours(2), threeDaysFromNow.plusHours(8), threeDaysFromNow.plusHours(10)),
             //A normal flight with two hour duration
             createFlight(threeDaysFromNow, threeDaysFromNow.plusHours(2)),
             //A normal multi segment flight
@@ -32,7 +31,6 @@ class FlightBuilder {
             createFlight(threeDaysFromNow, threeDaysFromNow.plusHours(2),
                 threeDaysFromNow.plusHours(3), threeDaysFromNow.plusHours(4),
                 threeDaysFromNow.plusHours(6), threeDaysFromNow.plusHours(7)));
-
     }
 
     private static Flight createFlight(final LocalDateTime... dates) {
