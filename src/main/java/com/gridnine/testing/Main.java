@@ -13,5 +13,8 @@ public class Main {
 
         Filter earlierDepartureDate = new ArrivalDateEarlierDepartureDate();
         System.out.println("2: " + earlierDepartureDate.filter(flights));
+
+        Filter tooBigGroundTime = new GroundTimeMoreThanTwoHours();
+        System.out.println("3: " + tooBigGroundTime.filter(flights));
     }
 }
