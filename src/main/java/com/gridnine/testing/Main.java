@@ -6,15 +6,15 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Hello passenger!");
         List<Flight> flights = FlightBuilder.createFlights();
-        System.out.println("0: " + flights);
+        System.out.println("Все перелёты:\n " + flights);
 
         Filter beforeCurrentTime = new DepartureBeforeCurrentTime();
-        System.out.println("1: " + beforeCurrentTime.filter(flights));
+        System.out.println("Исключение перелётов до текущего момента времени:\n " + beforeCurrentTime.filter(flights));
 
         Filter earlierDepartureDate = new ArrivalDateEarlierDepartureDate();
-        System.out.println("2: " + earlierDepartureDate.filter(flights));
+        System.out.println("Исключение перелётов с датой прилёта раньше даты вылета:\n " + earlierDepartureDate.filter(flights));
 
         Filter tooBigGroundTime = new GroundTimeMoreThanTwoHours();
-        System.out.println("3: " + tooBigGroundTime.filter(flights));
+        System.out.println("Исключение перелётов, где общее время, проведённое на земле, превышает два часа:\n " + tooBigGroundTime.filter(flights));
     }
 }
