@@ -10,16 +10,27 @@ public class FilteringFlightsTest {
     Filter arrivalDateEarlierDepartureDate = new ArrivalDateEarlierDepartureDate();
     Filter groundTimeMoreThanTwoHours = new GroundTimeMoreThanTwoHours();
 
+    /**
+     * Тестируем фильтр на исключение перелётов до текущего момента времени
+     */
     @Test
     void firstRuleTest() {
         List<Flight> expected = departureBeforeCurrentTime.filter(allFlights);
         assertEquals(expected, FlightsForTest.departureBeforeCurrentTime);
     }
+
+    /**
+     * Тестируем фильтр на исключение перелётов с датой прилёта раньше даты вылета
+     */
     @Test
     void secondRuleTest() {
         List<Flight> expected = arrivalDateEarlierDepartureDate.filter(allFlights);
         assertEquals(expected, FlightsForTest.arrivalDateEarlierDepartureDate);
     }
+
+    /**
+     * Тестируем фильтр на исключение перелётов, где общее время, проведённое на земле, превышает два часа
+     */
     @Test
     void thirdRuleTest() {
         List<Flight> expected = groundTimeMoreThanTwoHours.filter(allFlights);
